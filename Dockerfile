@@ -1,8 +1,7 @@
 
 FROM golang:latest
 
-ENV PORT=8080
-ENV NAME=some
+
 
 WORKDIR /app
 # Копируем файлы go.mod и go.sum в директорию /app
@@ -12,5 +11,5 @@ RUN go mod download
 
 COPY . .
 
-CMD go run ./cmd/main.go --port=${PORT} --name=${NAME}
+CMD go run ./cmd/main.go
 
